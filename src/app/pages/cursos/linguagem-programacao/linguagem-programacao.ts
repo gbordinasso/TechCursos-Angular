@@ -14,29 +14,57 @@ import { firstValueFrom } from 'rxjs';
 })
 export class LinguagensProgramacaoComponent implements OnInit {
 
-  staticCourses: Course[] = [
-    { title: "Python", level: "Avançado", duration: "80h", img: "assets/foto-cursos/python.png", color: "python" } as Course,
-    { title: "Java", level: "Básico", duration: "40h", img: "assets/foto-cursos/java.png", color: "java" } as Course,
-    { title: "C#", level: "Básico", duration: "40h", img: "assets/foto-cursos/csharp.png", color: "csharp" } as Course,
-    { title: "Ruby", level: "Básico", duration: "40h", img: "assets/foto-cursos/ruby.png", color: "ruby" } as Course,
-  ];
+  // imagens como variáveis
+  pythonImg = 'assets/foto-cursos/python.png';
+  javaImg = 'assets/foto-cursos/java.png';
+  csharpImg = 'assets/foto-cursos/csharp.png';
+  rubyImg = 'assets/foto-cursos/ruby.png';
 
+  staticCourses: Course[] = [];
   lpCourses: Course[] = [];
-  allCourses: Course[] = [];
 
-  constructor(private coursesService: CoursesService) { }
+  constructor(private coursesService: CoursesService) {}
 
   async ngOnInit(): Promise<void> {
     try {
+
+      // cursos estáticos
+      this.staticCourses = [
+        { title: "Python", level: "Avançado", duration: "80h", img: this.pythonImg, color: "python" } as Course,
+        { title: "Java", level: "Básico", duration: "40h", img: this.javaImg, color: "java" } as Course,
+        { title: "C#", level: "Básico", duration: "40h", img: this.csharpImg, color: "csharp" } as Course,
+        { title: "Ruby", level: "Básico", duration: "40h", img: this.rubyImg, color: "ruby" } as Course,
+      ];
+
       const cursos = await firstValueFrom(this.coursesService.getCourses());
+
+      // backend filtrado + normalizado
       const fetched = cursos
         .filter(c => c.category === 'lp')
-        .map(c => ({ ...c, color: this.getColorForTitle(c.title) } as Course));
+        .map(c => ({
+          ...c,
+          img: this.normalizeImg(c.img),
+          color: this.getColorForTitle(c.title)
+        }) as Course);
+
       this.lpCourses = fetched;
-      this.allCourses = this.dedupeByTitle([...this.staticCourses, ...this.lpCourses]);
+
     } catch (error) {
       console.error("Erro ao carregar cursos:", error);
     }
+  }
+
+  // mesma lógica do BancoDeDadosComponent
+  get allCourses(): Course[] {
+    const combined = [...this.staticCourses, ...this.lpCourses];
+    const map = new Map<string, Course>();
+
+    for (const c of combined) {
+      const key = (c.title || '').toLowerCase().trim();
+      if (!map.has(key)) map.set(key, c);
+    }
+
+    return Array.from(map.values());
   }
 
   private getColorForTitle(title: string): string {
@@ -48,12 +76,8 @@ export class LinguagensProgramacaoComponent implements OnInit {
     return '';
   }
 
-  private dedupeByTitle(list: Course[]): Course[] {
-    const map = new Map<string, Course>();
-    for (const c of list) {
-      const key = (c.title || '').toLowerCase().trim();
-      if (!map.has(key)) map.set(key, c);
-    }
-    return Array.from(map.values());
+  private normalizeImg(img?: string): string | undefined {
+    if (!img) return undefined;
+    return img.replace(/^\/assets\/cursos\//, 'assets/foto-cursos/');
   }
 }

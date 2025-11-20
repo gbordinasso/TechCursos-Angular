@@ -23,28 +23,6 @@
   box-shadow: 0 8px 20px #61dafb;
 }
 
-/* Imagem do curso */
-.course-card img {
-  width: 100%;
-  height: 150px;
-  object-fit: contain;
-  background: #0d1117;
-  padding: 10px;
-}
-
-/* Texto */
-.course-card h2 {
-  margin: 15px 0 5px;
-  font-size: 1.4rem;
-}
-
-.course-card p {
-  margin: 4px 0;
-  font-size: 0.95rem;
-  opacity: 0.9;
-}
-
-
 /* Desenvolvimento Web */
 .course-card.html {
   border-top: 4px solid #e34c26;
