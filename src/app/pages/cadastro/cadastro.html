@@ -1,0 +1,30 @@
+<app-header></app-header>
+
+<div class="cadastro-container">
+    <div class="left-image">
+        <img [src]="meninaImg" alt="Pessoa apontando">
+    </div>
+
+    <div class="form-container">
+        <h2>Crie sua conta</h2>
+        <p>ou <a routerLink="/login">faça login na sua conta</a></p>
+
+        <form [formGroup]="form" (ngSubmit)="enviar()">
+
+            <input type="text" placeholder="Digite seu nome" formControlName="nome">
+            <input type="text" placeholder="Digite seu sobrenome" formControlName="sobrenome">
+            <input type="email" placeholder="E-mail" formControlName="email">
+            <input type="email" placeholder="Confirme seu e-mail" formControlName="emailConfirm">
+
+            <input type="password" placeholder="Digite sua senha" formControlName="senha">
+            <input type="password" placeholder="Confirme sua senha" formControlName="senhaConfirm">
+
+            <button type="submit" [disabled]="submitting">
+                {{ submitting ? "Enviando..." : "Cadastrar" }}
+            </button>
+
+        </form>
+    </div>
+</div>
+
+<app-footer></app-footer>

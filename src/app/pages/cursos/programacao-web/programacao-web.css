@@ -1,0 +1,63 @@
+/* Desenvolvimento WEB */
+/* Box HTML */
+.course-card.html:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 20px #e34c26;
+}
+
+/* Box CSS */
+.course-card.css:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 20px #2965f1;
+}
+
+/* Box JAVASCRIPT */
+.course-card.javascript:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 20px #f7df1e;
+}
+
+/* Box REACT */
+.course-card.react:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 20px #61dafb;
+}
+
+/* Imagem do curso */
+.course-card img {
+  width: 100%;
+  height: 150px;
+  object-fit: contain;
+  background: #0d1117;
+  padding: 10px;
+}
+
+/* Texto */
+.course-card h2 {
+  margin: 15px 0 5px;
+  font-size: 1.4rem;
+}
+
+.course-card p {
+  margin: 4px 0;
+  font-size: 0.95rem;
+  opacity: 0.9;
+}
+
+
+/* Desenvolvimento Web */
+.course-card.html {
+  border-top: 4px solid #e34c26;
+}
+
+.course-card.css {
+  border-top: 4px solid #2965f1;
+}
+
+.course-card.javascript {
+  border-top: 4px solid #f7df1e;
+}
+
+.course-card.react {
+  border-top: 4px solid #61dafb;
+}

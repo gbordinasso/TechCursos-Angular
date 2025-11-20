@@ -1,0 +1,22 @@
+<app-header></app-header>
+
+<main class="heromain">
+    <h2 class="titulo">Assinatura</h2>
+    <p class="subtitulo">
+        Escolha o plano que melhor se adapta às suas necessidades.
+    </p>
+
+    <div class="planos">
+        <div *ngFor="let plano of planos" class="card" [ngClass]="plano.cor">
+            <h3>{{ plano.titulo }}</h3>
+            <p class="preco">{{ plano.preco }}</p>
+            <p class="detalhe">{{ plano.detalhe }}</p>
+            <ul>
+                <li *ngFor="let item of plano.lista">{{ item }}</li>
+            </ul>
+            <button class="btn">Assinar</button>
+        </div>
+    </div>
+</main>
+
+<app-footer></app-footer>

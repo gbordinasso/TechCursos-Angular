@@ -1,0 +1,150 @@
+{
+  "users": [
+    {
+      "id": "a3ca",
+      "nome": "Gustavo",
+      "sobrenome": "Bordinasso",
+      "email": "gustavob@gmail.com",
+      "senha": "123456",
+      "role": "user"
+    },
+    {
+      "id": "adm1",
+      "nome": "Administrador",
+      "sobrenome": "Do Sistema",
+      "email": "admin@senac.com",
+      "senha": "admin123",
+      "role": "admin"
+    }
+  ],
+  "courses": [
+    {
+      "id": "1",
+      "img": "/assets/cursos/python.png",
+      "title": "Python",
+      "level": "Avançado",
+      "duration": "80 horas",
+      "category": "lp"
+    },
+    {
+      "id": "2",
+      "img": "/assets/cursos/java.png",
+      "title": "Java",
+      "level": "Básico",
+      "duration": "40 horas",
+      "category": "lp"
+    },
+    {
+      "id": "3",
+      "img": "/assets/cursos/csharp.png",
+      "title": "C#",
+      "level": "Básico",
+      "duration": "40 horas",
+      "category": "lp"
+    },
+    {
+      "id": "4",
+      "img": "/assets/cursos/ruby.png",
+      "title": "Ruby",
+      "level": "Básico",
+      "duration": "40 horas",
+      "category": "lp"
+    },
+    {
+      "id": "5",
+      "img": "/assets/cursos/mysql.png",
+      "title": "MySQL",
+      "level": "Avançado",
+      "duration": "80 horas",
+      "category": "bd"
+    },
+    {
+      "id": "6",
+      "img": "/assets/cursos/oracle.png",
+      "title": "Oracle",
+      "level": "Básico",
+      "duration": "40 horas",
+      "category": "bd"
+    },
+    {
+      "id": "7",
+      "img": "/assets/cursos/postgre.png",
+      "title": "PostgreSQL",
+      "level": "Basico",
+      "duration": "40 horas",
+      "category": "bd"
+    },
+    {
+      "id": "8",
+      "img": "/assets/cursos/mongodb.png",
+      "title": "MongoDB",
+      "level": "Intermediário",
+      "duration": "60 horas",
+      "category": "bd"
+    },
+    {
+      "id": "9",
+      "img": "/assets/cursos/html5.png",
+      "title": "HTML5",
+      "level": "Avançado",
+      "duration": "60 horas",
+      "category": "pw"
+    },
+    {
+      "id": "10",
+      "img": "/assets/cursos/css3.png",
+      "title": "CSS3",
+      "level": "Básico",
+      "duration": "50 horas",
+      "category": "pw"
+    },
+    {
+      "id": "11",
+      "img": "/assets/cursos/javascript.png",
+      "title": "JavaScript",
+      "level": "Avançado",
+      "duration": "90 horas",
+      "category": "pw"
+    },
+    {
+      "id": "12",
+      "img": "/assets/cursos/react.png",
+      "title": "React",
+      "level": "Básico",
+      "duration": "40 horas",
+      "category": "pw"
+    },
+    {
+      "id": "13",
+      "img": "/assets/cursos/powerpoint.png",
+      "title": "PowerPoint",
+      "level": "Avançado",
+      "duration": "80 horas",
+      "category": "info"
+    },
+    {
+      "id": "14",
+      "img": "/assets/cursos/excel.png",
+      "title": "Excel",
+      "level": "Básico",
+      "duration": "50 horas",
+      "category": "info"
+    },
+    {
+      "id": "15",
+      "img": "/assets/cursos/powerbi.png",
+      "title": "Power BI",
+      "level": "Básico",
+      "duration": "40 horas",
+      "category": "info"
+    },
+    {
+      "id": "16",
+      "img": "/assets/cursos/word.png",
+      "title": "Word",
+      "level": "Intermediário",
+      "duration": "60 horas",
+      "category": "info"
+    }
+  ]
+}

@@ -1,0 +1,83 @@
+<div id="body">
+  <div class="cadastrar-curso-container">
+    <app-header-admin></app-header-admin>
+
+    <h2>Cadastrar Novo Curso</h2>
+
+    <form class="cadastrar-curso-form" (submit)="handleSubmit($event)">
+      
+      <label for="title">Título</label>
+      <input id="title" name="title" type="text"
+             placeholder="Ex: Fundamentos de React"
+             [(ngModel)]="curso.title" />
+
+      <label for="img">Imagem (URL)</label>
+      <input id="img" name="img" type="text"
+             placeholder="https://exemplo.com/img-react.png"
+             [(ngModel)]="curso.img" />
+
+      <label for="level">Nível</label>
+      <select id="level" name="level" [(ngModel)]="curso.level">
+        <option value="">Selecione o nível</option>
+        <option value="Iniciante">Iniciante</option>
+        <option value="Intermediário">Intermediário</option>
+        <option value="Avançado">Avançado</option>
+      </select>
+
+      <label for="duration">Duração (Horas)</label>
+      <input id="duration" name="duration" type="number" placeholder="Ex: 40"
+             [(ngModel)]="curso.duration" />
+
+      <label for="category">Categoria</label>
+      <select id="category" name="category" [(ngModel)]="curso.category">
+        <option value="">Selecione a categoria</option>
+        <option value="lp">Linguagens de Programação</option>
+        <option value="bd">Banco de Dados</option>
+        <option value="pw">Programação Web</option>
+        <option value="info">Informática</option>
+      </select>
+
+      <button type="submit" [disabled]="enviando">
+        {{ enviando ? 'Cadastrando...' : 'Cadastrar Curso' }}
+      </button>
+
+    </form>
+
+    <br />
+    <hr />
+
+    <h2>Cursos Cadastrados</h2>
+
+    <div class="lista-cursos">
+
+      <ng-container *ngIf="cursos.length > 0; else semCursos">
+
+        <div *ngFor="let c of cursos" class="curso-item">
+
+          <div>
+            <h3>{{ c.title }}</h3>
+            <span>
+              <strong>Nível:</strong> {{ c.level }} |
+              <strong>Duração:</strong> {{ c.duration }} |
+              <strong>Categoria:</strong> {{ c.category?.toUpperCase() }}
+            </span>
+          </div>
+
+          <button class="btn-excluir" (click)="handleDelete(c.id!)">
+            Excluir
+          </button>
+
+        </div>
+
+      </ng-container>
+
+      <ng-template #semCursos>
+        <p>Nenhum curso cadastrado ainda.</p>
+      </ng-template>
+
+    </div>
+
+    <app-footer></app-footer>
+
+  </div>
+</div>

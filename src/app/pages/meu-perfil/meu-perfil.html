@@ -1,0 +1,66 @@
+<div *ngIf="isLoading" class="perfil-loading">Carregando...</div>
+<div *ngIf="!isLoading && !user" class="perfil-error">Usuário não encontrado.</div>
+
+<div *ngIf="!isLoading && user" class="perfil-container">
+    <!-- Header -->
+    <ng-container *ngIf="user.role === 'admin'; else userHeader">
+        <app-header-admin></app-header-admin>
+    </ng-container>
+    <ng-template #userHeader>
+        <app-header></app-header>
+    </ng-template>
+
+    <!-- Sidebar -->
+    <aside class="perfil-sidebar">
+        <h2>Meu Perfil</h2>
+        <nav>
+            <button (click)="activeSection='visaoGeral'" [class.active]="activeSection==='visaoGeral'">Visão
+                Geral</button>
+            <button (click)="activeSection='assinaturas'" [class.active]="activeSection==='assinaturas'">Assinaturas e
+                Compras</button>
+            <button (click)="activeSection='certificados'"
+                [class.active]="activeSection==='certificados'">Certificados</button>
+            <button (click)="activeSection='acesso'" [class.active]="activeSection==='acesso'">Dados de Acesso</button>
+            <button (click)="activeSection='pessoais'" [class.active]="activeSection==='pessoais'">Dados
+                Pessoais</button>
+        </nav>
+    </aside>
+
+    <!-- Conteúdo -->
+    <main class="perfil-content">
+        <section *ngIf="activeSection==='visaoGeral'">
+            <h1>Bem-vindo, {{ user.nome }}!</h1>
+            <p>Aqui você pode gerenciar seus dados, acessar certificados e visualizar suas compras.</p>
+        </section>
+
+        <section *ngIf="activeSection==='assinaturas'">
+            <h1>Assinaturas e Compras</h1>
+            <p>Nenhuma compra registrada no momento.</p>
+        </section>
+
+        <section *ngIf="activeSection==='certificados'">
+            <h1>Certificados</h1>
+            <p>Você ainda não possui certificados disponíveis.</p>
+        </section>
+
+        <section *ngIf="activeSection==='acesso'" class="perfil-form">
+            <h1>Dados de Acesso</h1>
+            <label>Email</label>
+            <input type="email" [(ngModel)]="user.email" />
+            <label>Senha</label>
+            <input type="password" [(ngModel)]="user.senha" />
+            <button (click)="handleSave()">Salvar Alterações</button>
+        </section>
+
+        <section *ngIf="activeSection==='pessoais'" class="perfil-form">
+            <h1>Dados Pessoais</h1>
+            <label>Nome</label>
+            <input type="text" [(ngModel)]="user.nome" />
+            <label>Sobrenome</label>
+            <input type="text" [(ngModel)]="user.sobrenome" />
+            <button (click)="handleSave()">Salvar Alterações</button>
+        </section>
+    </main>
+
+</div>
+<app-footer></app-footer>

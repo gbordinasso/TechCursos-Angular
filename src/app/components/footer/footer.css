@@ -1,0 +1,22 @@
+.footer {
+  width: 100%;
+  margin: 0;
+  padding: 1.4rem;
+  text-align: center;
+  background: #f2f2f2;
+  font-size: 0.95rem;
+  border-top: 1px solid #e0e0e0;
+  position: relative;
+  left: 0;
+  bottom: 0;
+}
+
+.footer-links {
+  margin: 0.6rem 0;
+}
+
+.footer-links a {
+  margin: 0 0.6rem;
+  color: #333;
+  text-decoration: none;
+}

@@ -1,0 +1,21 @@
+/* ADVANTAGES */
+.advantages {
+  text-align: center;
+  padding: 2rem 1rem; 
+}
+
+.advantage-list {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 1rem;
+  flex-wrap: wrap;
+}
+
+.advantage-item {
+  background: #fff; 
+  padding: 0.9rem 1.2rem; 
+  border-radius: 10px; 
+  box-shadow: 0 6px 18px rgba(2,20,80,0.04);
+  width: 15em;
+}

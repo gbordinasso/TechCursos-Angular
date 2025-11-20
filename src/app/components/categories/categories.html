@@ -1,0 +1,21 @@
+<section class="categories">
+    <h2>Categorias de Cursos</h2>
+
+    <div class="category-list">
+        <ng-container *ngFor="let c of categorias">
+
+            <a *ngIf="c.to; else noLink" [routerLink]="c.to" class="category-card">
+                <span class="icon">{{ c.icon }}</span>
+                <p>{{ c.nome }}</p>
+            </a>
+
+            <ng-template #noLink>
+                <div class="category-card">
+                    <span class="icon">{{ c.icon }}</span>
+                    <p>{{ c.nome }}</p>
+                </div>
+            </ng-template>
+
+        </ng-container>
+    </div>
+</section>

@@ -1,0 +1,41 @@
+/* Banco de Dados */
+/* Box MySQL */
+.course-card.mysql:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 20px #00c3ff;
+}
+
+/* Box ORACLE */
+.course-card.oracle:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 20px #ff0000;
+}
+
+/* Box POSTGRESQL */
+.course-card.postgresql:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 20px #0099ffa2;
+}
+
+/* Box MONGODB */
+.course-card.mongodb:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 20px #15ff001e;
+}
+
+/* Banco de Dados */
+.course-card.mysql {
+  border-top: 4px solid #00c3ff;
+}
+
+.course-card.oracle {
+  border-top: 4px solid #ff0000;
+}
+
+.course-card.postgresql {
+  border-top: 4px solid #0099ffa2;
+}
+
+.course-card.mongodb {
+  border-top: 4px solid #15ff001e;
+}

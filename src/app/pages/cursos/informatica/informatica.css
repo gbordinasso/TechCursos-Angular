@@ -1,0 +1,41 @@
+/* Informática */
+/* Box POWERPOINT */
+.course-card.powerpoint:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 8px 20px #ff9100;
+}
+
+/* Box EXCEL */
+.course-card.excel:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 8px 20px #15ff00b4;
+}
+
+/* Box POWERBI */
+.course-card.powerbi:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 8px 20px #fffb00;
+}
+
+/* Box WORD */
+.course-card.word:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 8px 20px #0051ff80;
+}
+
+/* Informática */
+.course-card.powerpoint {
+    border-top: 4px solid #ff9100;
+}
+
+.course-card.excel {
+    border-top: 4px solid #15ff00b4;
+}
+
+.course-card.powerbi {
+    border-top: 4px solid #fffb00;
+}
+
+.course-card.word {
+    border-top: 4px solid #0051ff80;
+}

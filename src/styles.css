@@ -1,0 +1,248 @@
+/* Basic reset */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Poppins", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  background-color: #f2f2f2;
+  color: #111;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.heromain {
+  height: 800px;
+  text-align: center;
+  background: linear-gradient(180deg, #0b63f6, #007bff);
+  color: white;
+  padding: 4rem 1rem;
+}
+
+/* HERO */
+.hero {
+  text-align: center;
+  background: linear-gradient(180deg, #0b63f6, #007bff);
+  color: white;
+  padding: 4rem 1rem;
+}
+
+.hero-inner {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.hero h1 {
+  font-size: 2.6rem;
+  margin-bottom: 0.6rem;
+}
+
+.hero p {
+  font-size: 1.05rem;
+  margin-bottom: 1.6rem;
+  opacity: 0.95;
+}
+
+/* Responsive */
+@media (max-width: 640px) {
+  .search-bar input {
+    width: 160px;
+  }
+
+  .category-card {
+    width: 46%;
+  }
+
+  .hero h1 {
+    font-size: 1.8rem;
+  }
+}
+
+/* Estilização dos cursos */
+/* Container geral da página */
+.home-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #0d1117, #1c1f26);
+  color: #fff;
+}
+
+/* Conteúdo principal */
+.main-content {
+  flex: 1;
+  padding: 60px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Grid dos cursos */
+.courses-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  width: 100%;
+  max-width: 1000px;
+}
+
+/* Cartões de curso */
+.course-card {
+  background: #161b22;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding-bottom: 20px;
+}
+
+/* Responsividade */
+@media (max-width: 600px) {
+  .main-content {
+    padding: 40px 10px;
+  }
+
+  .course-card h2 {
+    font-size: 1.2rem;
+  }
+
+  .course-card p {
+    font-size: 0.85rem;
+  }
+}
+
+/* HEADER */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(5deg, #0b63f6, #0000BF);
+  color: white;
+  padding: 1rem 2.5rem;
+  position: fixed;
+  width: 100%;
+  height: 4em;
+  z-index: 2;
+  top: 0;
+  left: 0;
+}
+
+.header h2 {
+  margin: 0;
+  font-size: 1.4rem;
+  letter-spacing: 0.4px;
+}
+
+.header nav {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.header nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  opacity: 0.95;
+}
+
+.header h2 a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.login-btn {
+  background: #00b3b3;
+  color: white;
+  border: none;
+  padding: 0.5rem 0.9rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.logout-btn {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: white;
+  color: #0b63f6;
+  border: 1px solid #0b63f6;
+  padding: 0.4rem 0.8rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  white-space: nowrap;
+  transition: all 0.2s ease-in-out;
+}
+
+.logout-btn:hover {
+  background: #144fb6;
+  color: white;
+}
+
+.usuario-menu {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.usuario-nome {
+  font-weight: 600;
+}
+
+header img {
+  height: 3.5em;
+}
+
+.menu-usuario {
+  position: absolute;
+  top: 120%;
+  right: 0;
+  background: #eaeaea;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  padding: 20px 30px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  min-width: 180px;
+  z-index: 100;
+  animation: fadeInMenu 0.3s ease forwards;
+}
+
+
+/* Botões internos */
+.menu-usuario button {
+  background: none;
+  border: none;
+  font-weight: 700;
+  font-size: 1rem;
+  color: #000;
+  text-align: left;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.menu-usuario button:hover {
+  color: #0b63f6;
+  transform: translateX(5px);
+}
+
+/* Animação suave */
+@keyframes fadeInMenu {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

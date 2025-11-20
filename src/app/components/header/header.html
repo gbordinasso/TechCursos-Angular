@@ -1,0 +1,38 @@
+<header class="header">
+  <div>
+    <a routerLink="/">
+      <img src="/src/assets/logo/logo.png" alt="Logo" />
+    </a>
+  </div>
+
+  <nav>
+    <a routerLink="/sobre">Sobre</a>
+    <a routerLink="/assinaturas">Assine</a>
+
+    <!-- Se está logado -->
+    <div *ngIf="usuario; else naoLogado" class="usuario-menu">
+
+      <span class="usuario-nome" (click)="toggleMenu()">
+        Olá, {{ usuario.nome }}
+      </span>
+
+      <!-- Menu suspenso -->
+      <div *ngIf="mostrarLogout" class="menu-usuario">
+        <button (click)="irParaPerfil()">Meu perfil</button>
+        <button (click)="irParaMeusCursos()">Meus cursos</button>
+        <button (click)="logout()">Desconectar</button>
+      </div>
+    </div>
+
+    <!-- Se NÃO está logado -->
+    <ng-template #naoLogado>
+      <a routerLink="/login">
+        <button class="login-btn">Entrar</button>
+      </a>
+      <a routerLink="/cadastro">
+        <button class="login-btn">Criar conta</button>
+      </a>
+    </ng-template>
+
+  </nav>
+</header>

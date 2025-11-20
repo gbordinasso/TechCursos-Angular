@@ -1,0 +1,41 @@
+/* Linguagens de Programação */
+.course-card.python {
+  border-top: 4px solid #0084ff;
+}
+
+.course-card.java {
+  border-top: 4px solid #ff0000;
+}
+
+.course-card.csharp {
+  border-top: 4px solid #cc00ff;
+}
+
+.course-card.ruby {
+  border-top: 4px solid #ff00004f;
+}
+
+/* Linguagens de Programação */
+/* Box PYTHON */
+.course-card.python:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 20px #0084ff;
+}
+
+/* Box JAVA */
+.course-card.java:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 20px #ff0000;
+}
+
+/* Box C# */
+.course-card.csharp:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 20px #cc00ff;
+}
+
+/* Box RUBY */
+.course-card.ruby:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 20px #ff00004f;
+}

@@ -1,0 +1,19 @@
+<div class="home-container">
+  <app-header></app-header>
+  <main class="main-content">
+    <div class="courses-grid">
+
+      <div *ngFor="let course of allCourses; let i = index" class="course-card" [ngClass]="course.color">
+        <img [src]="course.img" [alt]="course.title" />
+        <div>
+          <h2>{{ course.title }}</h2>
+          <p>Nível: {{ course.level }}</p>
+          <p *ngIf="course.duration">Duração: {{ course.duration }}</p>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <app-footer></app-footer>
+</div>
