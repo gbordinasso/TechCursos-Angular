@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HeaderComponent } from '../../../components/header/header';
 import { FooterComponent } from '../../../components/footer/footer';
@@ -10,7 +10,8 @@ import { firstValueFrom } from 'rxjs';
   standalone: true,
   imports: [CommonModule, HeaderComponent, FooterComponent],
   templateUrl: './banco-de-dados.html',
-  styleUrls: ['./banco-de-dados.css']
+  styleUrls: ['./banco-de-dados.css'],
+  encapsulation: ViewEncapsulation.None
 })
 export class BancoDeDadosComponent implements OnInit {
   // imagens como variáveis do componente

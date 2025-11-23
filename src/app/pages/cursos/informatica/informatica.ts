@@ -23,7 +23,7 @@ export class InformaticaComponent implements OnInit {
   staticCourses: Course[] = [];
   infoCourses: Course[] = [];
 
-  constructor(private coursesService: CoursesService) {}
+  constructor(private coursesService: CoursesService) { }
 
   async ngOnInit(): Promise<void> {
     try {
@@ -40,11 +40,13 @@ export class InformaticaComponent implements OnInit {
       // cursos vindos do backend
       const fetched = cursos
         .filter(c => c.category === 'info')
+        .filter(c => c.title.toLowerCase() !== "power bi") // BLOQUEIA
         .map(c => ({
           ...c,
           img: this.normalizeImg(c.img),
-          color: this.getColorForTitle(c.title)
+          color: this.getColorForTitle(c.title),
         }) as Course);
+
 
       this.infoCourses = fetched;
 
