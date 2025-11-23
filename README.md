@@ -1,5 +1,3 @@
-Projeto TechCursos: plataforma educacional com login, módulos de cursos, navegação por categorias e painel administrativo para cadastro de conteúdos.
-
 # TechCursos
 
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.3.8.
